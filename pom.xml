@@ -52,6 +52,14 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-telegram-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson</artifactId>
+        </dependency>
 
     </dependencies>
 
@@ -63,7 +71,7 @@
                 <version>3.5.1</version>
                 <configuration>
                     <!-- Set the source level to Java 8 -->
-                    <source>1.8</source>
+                    <source>1.8</source>a
                     <target>1.8</target>
                 </configuration>
             </plugin>

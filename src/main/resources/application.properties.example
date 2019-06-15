@@ -1,0 +1,9 @@
+# To keep the application alive
+camel.springboot.main-run-controller=true
+
+# Create a new bot using the BotFather, then put here your token
+camel.component.telegram.authorization-token=place_telegram_bot_authorization_token_here
+
+camel.github.authorization-token=place_github_authorization_token_here
+
+camel.telegram.chat-id=place_telegram_chat_id_here

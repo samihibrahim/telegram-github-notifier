@@ -20,3 +20,5 @@ hs_err_pid*
 .settings/
 .project
 .classpath
+
+src/main/resources/application.properties

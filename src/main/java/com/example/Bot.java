@@ -13,19 +13,32 @@ public class Bot {
     private Logger log = LoggerFactory.getLogger(getClass());
 
     /**
-     * This method processes incoming messages and return responses.
+     * This method echos incoming messages back as responses.
      *
      * @param message a message coming from a human user in a chat
-     * @return the reply of the bot. Return null if you don't want to answer
+     * @return the reply of the bot as a string or null for none.
      */
-    public String process(String message) {
+    public String echoBack(String message) {
         if (message == null) {
             return null; // skip non-text messages
         }
 
-        log.info("Received message: {}", message);
+        log.info("Received message from bot: {}", message);
 
         return "Why did you say \"" + message.replace("\"", "-") + "\"?";
+    }
+
+    /**
+     * This method processed Github notifications and returns a summary.
+     *
+     * @param githubNotifications an array of Github Notifications or emtpy if none
+     * @return the reply of the bot as a string or null for no notifications.
+     */
+    public String processGithubNotifications(GithubNotification[] githubNotifications){
+        if(githubNotifications.length > 0)
+            return "You go a new Github Notification";
+        else
+            return null;
     }
 
 }
