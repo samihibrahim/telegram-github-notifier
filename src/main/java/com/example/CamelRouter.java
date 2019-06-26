@@ -19,11 +19,11 @@ public class CamelRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("telegram:bots/{{TELEGRAM_AUTH_TOKEN}}")
+        from("telegram:bots/{{TELEGRAM_AUTH_TOKEN}}?delay=30m")
                 .bean(bot,"echoBack")
                 .to("telegram:bots/{{TELEGRAM_AUTH_TOKEN}}");
 
-        from("timer://fetch_github_notifications?fixedRate=true&period=10s")
+        from("timer://fetch_github_notifications?fixedRate=true&period=15m")
                 .setHeader("Authorization", constant("token {{GITHUB_AUTH_TOKEN}}"))
                 .setHeader(Exchange.HTTP_METHOD, constant("GET"))
                 .to("https4://api.github.com/notifications")
